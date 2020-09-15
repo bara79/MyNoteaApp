@@ -6,6 +6,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.mynoteaapp.R
+import com.example.mynoteaapp.ui.note.NoteActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -20,7 +21,10 @@ class MainActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
         rv_notes.layoutManager = GridLayoutManager(this, 2)
-        adapter = NotesRVAdapter()
+        adapter = NotesRVAdapter{
+
+
+        }
         rv_notes.adapter = adapter
 
         viewModel.getViewState().observe(this, Observer { value ->
@@ -28,7 +32,10 @@ class MainActivity : AppCompatActivity() {
                 adapter.notes = it.notes
             }
         })
-    }
 
+        fab.setOnClickListener {
+            NoteActivity.start(this)
+        }
+    }
 
 }
