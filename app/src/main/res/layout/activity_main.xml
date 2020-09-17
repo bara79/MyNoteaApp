@@ -26,8 +26,6 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:layout_height="match_parent"/>
 
-
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
@@ -36,7 +34,7 @@
         app:layout_anchorGravity="bottom|end"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        app:layout_behavior=".ui.common.FabBehavior"/>
 
+        app:layout_behavior=".ui.common.FabBehavior"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
